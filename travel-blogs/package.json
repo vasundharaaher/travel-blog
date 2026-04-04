@@ -1,0 +1,48 @@
+{
+        "name": "travel-blogs",
+        "version": "1.0.0",
+        "description": "user should be able to post their blog",
+        "type": "module",
+        "main": "app.js",
+        "scripts": {
+                "start": "node --env-file=.env.production --experimental-transform-types app",
+                "dev": "node --env-file=.env --experimental-transform-types --watch app",
+                "lint": "eslint",
+                "lint:fix": "eslint --fix",
+                "db:sync": "npx prisma db pull & npx prisma generate",
+                "sql": "npx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script > prisma/migrations/migration.sql"
+        },
+        "author": "geneka",
+        "license": "ISC",
+        "dependencies": {
+                "@prisma/adapter-mariadb": "^7.4.0",
+                "@prisma/client": "^7.5.0",
+                "bcryptjs": "^3.0.3",
+                "cors": "^2.8.6",
+                "dcryptjs": "^1.0.5",
+                "dotenv": "^17.3.1",
+                "express": "^5.2.1",
+                "helmet": "^8.1.0",
+                "jsonwebtoken": "^9.0.3",
+                "multer": "^2.0.2",
+                "razorpay": "^2.9.6",
+                "zod": "^4.3.6"
+        },
+        "devDependencies": {
+                "@eslint/js": "^10.0.1",
+                "eslint": "^10.0.0",
+                "globals": "^17.3.0",
+                "prettier": "^3.8.1",
+                "prisma": "^7.4.0"
+        },
+        "imports": {
+                "#constants/*": "./src/utils/constants/*.js",
+                "#validation/*": "./src/validation/*.js",
+                "#middlewares/*": "./src/middlewares/*.js",
+                "#routers/*": "./src/routes/*.js",
+                "#controllers/*": "./src/controllers/*.js",
+                "#services/*": "./src/services/*.js",
+                "#db": "./src/config/db.js",
+                "#utils/*": "./src/utils/*.js"
+        }
+}

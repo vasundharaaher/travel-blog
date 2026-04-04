@@ -1,0 +1,77 @@
+// for installation
+npm init @eslint/config@latest
+
+// in package . json
+ "scripts": {
+    "dev": "node --env-file=.env app.js",
+    "lint": "eslint"
+  },
+
+// command to run in terminal
+npm run lint
+
+// command for fixing error autometically by eslint
+npm run lint:fix
+
+
+app.js -> routes -> controller -> services  // db //cal
+
+routes = navigation
+services = business logic
+
+
+
+
+================== DB connection
+*
+npx prisma init
+
+Initialized Prisma in your project
+
+  prisma/
+    schema.prisma
+  prisma.config.ts
+
+
+CONNECT EXISTING DATABASE:
+  1. Configure your DATABASE_URL in prisma.config.ts
+  2. Run prisma db pull to introspect your database.
+
+CREATE NEW DATABASE:
+  Local: npx prisma dev (runs Postgres locally in your terminal)
+  Cloud: npx create-db (creates a free Prisma Postgres database)
+*
+npx prisma db pull
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": MySQL database "travel-blog" at "localhost:3306"
+
+✔ Introspected 2 models and wrote them into prisma\schema.prisma in 127ms
+
+
+we  have to run every time when we do changes in db
+npx prisma db pull & npx prisma generate
+
+for short cut include command in package .json
+ "db:sync": "npx prisma db pull & npx prisma generate"
+
+completlly optinal , 
+  if you want sql file of db
+npx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script > prisma/migrations/migration.sql
+
+for short cut include command in package .json
+  "sql": "npx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script > prisma/migrations/migration.sql"
+
+
+
+//////////////JWT Token
+
+command for installing jwt Token
+
+npm install jsonwebtoken
+
+
+command for creating token and printing it in console
+
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
