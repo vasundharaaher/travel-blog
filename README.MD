@@ -20,11 +20,19 @@ A responsive and dynamic **Travel Blog Web Application** where users can explore
 - React Js
 - Tailwind 
 
-**Backend (if applicable):**
+**Backend:**
 - Node.js / Express  
 
-**Database (if applicable):**
+**Database:**
 - MySQL  
 
 ---
 
+##  for using repo 
+git clone repo_url
+
+CD to_directory frontend / backend 
+
+npm install
+
+npm run dev
