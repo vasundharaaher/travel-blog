@@ -30,13 +30,13 @@ A responsive and dynamic **Travel Blog Web Application** where users can explore
 
 ##  for using repo 
 
-```bash
+    ```bash
 git clone repo_url
 
-```bash
+    ```bash
 CD to_directory frontend / backend 
-
-```bash
+     ```
+    ```bash
 npm install
 
 npm run dev
